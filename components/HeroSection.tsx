@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 import React, { useEffect } from "react";
 import Aos from "aos";

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
 import { useEffect } from "react";
