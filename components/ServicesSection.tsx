@@ -4,10 +4,9 @@ import { useEffect } from "react";
 import { FaCreditCard, FaTools, FaHeadset } from "react-icons/fa";
 
 const ServicesSection = () => {
-  // Initialize AOS
   useEffect(() => {
     Aos.init({
-      duration: 1200, // Animation duration
+      duration: 1200,
     });
   }, []);
 

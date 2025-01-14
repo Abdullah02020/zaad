@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaBars, FaTimes, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Aos from "aos";
 
@@ -7,29 +8,23 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Toggle menu function
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  // Toggle dropdown function
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-  // Initialize AOS
   useEffect(() => {
-    Aos.init({
-      duration: 1200, // Animation duration
-    });
+    Aos.init({ duration: 1200 });
   }, []);
+
   return (
     <nav className="absolute top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4">
       {/* Logo */}
       <div data-aos="fade-down" data-aos-delay="300">
         <Link href="/">
-          <img
+          <Image
             src="/Zaad Logo White.png"
             alt="Zaad Logo"
+            width={150}
+            height={40}
             className="h-10 w-auto"
           />
         </Link>

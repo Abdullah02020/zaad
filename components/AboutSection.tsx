@@ -4,10 +4,9 @@ import { useEffect } from "react";
 import Aos from "aos";
 
 function AboutSection() {
-  // Initialize AOS
   useEffect(() => {
     Aos.init({
-      duration: 1200, // Animation duration
+      duration: 1200,
     });
   }, []);
   return (
@@ -19,9 +18,9 @@ function AboutSection() {
         data-aos-delay="300"
       >
         <Image
-          src="/about-img.png" // Correct the image path
+          src="/about-img.png"
           alt="Business Team"
-          width={500} // Adjust width and height as needed
+          width={500}
           height={500}
           className="rounded-lg shadow-lg w-[80%] sm:w-[70%] md:w-[60%] lg:w-[70%] xl:w-[60%] h-auto"
         />

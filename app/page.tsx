@@ -1,6 +1,5 @@
 "use client";
 import HeroSection from "@/components/HeroSection";
-import Image from "next/image";
 import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
