@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBars, FaTimes, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
@@ -8,10 +7,33 @@ import Aos from "aos";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
+  // Toggle menu function
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Toggle dropdown function
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Initialize AOS
   useEffect(() => {
     Aos.init({ duration: 1200 });
   }, []);
@@ -39,7 +61,12 @@ const Navbar = () => {
         <li data-aos="fade-down" data-aos-delay="450">
           <Link href="/about">About</Link>
         </li>
-        <li data-aos="fade-down" data-aos-delay="500" className="relative">
+        <li
+          ref={dropdownRef}
+          data-aos="fade-down"
+          data-aos-delay="500"
+          className="relative"
+        >
           <button
             className="flex items-center space-x-1"
             onClick={toggleDropdown}
@@ -58,36 +85,33 @@ const Navbar = () => {
               dropdownOpen ? "opacity-100 max-h-40" : "opacity-0 max-h-0"
             }`}
           >
-            <ul className="p-4 space-y-2 text-secondary">
+            <ul className="p-4 space-y-2 text-secondary w-[180px]">
               <li>
                 <Link
                   href="/services/web-design"
                   className="hover:text-primary"
                 >
-                  Web Design
+                  Zaad Petrol
                 </Link>
               </li>
               <li>
                 <Link href="/services/seo" className="hover:text-primary">
-                  SEO Services
+                  POS Line UP
                 </Link>
               </li>
               <li>
                 <Link href="/services/marketing" className="hover:text-primary">
-                  Digital Marketing
+                  Standalone Terminal
                 </Link>
               </li>
             </ul>
           </div>
         </li>
         <li data-aos="fade-down" data-aos-delay="450">
-          <Link href="/portfolio">Portfolio</Link>
+          <Link href="/portfolio">Partnership</Link>
         </li>
         <li data-aos="fade-down" data-aos-delay="500">
-          <Link href="/blog">Blog</Link>
-        </li>
-        <li data-aos="fade-down" data-aos-delay="550">
-          <Link href="/contact">Contact</Link>
+          <Link href="/blog">Pricing</Link>
         </li>
       </ul>
 
@@ -136,7 +160,17 @@ const Navbar = () => {
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
         <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">
-          <div className="text-2xl font-bold text-textLight">Vexel</div>
+          <div>
+            <Link href="/">
+              <Image
+                src="/Zaad Logo White.png"
+                alt="Zaad Logo"
+                width={150}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
+          </div>{" "}
           <button onClick={toggleMenu}>
             <FaTimes className="text-2xl text-textLight" />
           </button>
@@ -172,18 +206,18 @@ const Navbar = () => {
                 dropdownOpen ? "opacity-100 max-h-40" : "opacity-0 max-h-0"
               }`}
             >
-              <ul className="p-4 space-y-2 text-secondary">
+              <ul className="p-4 space-y-2 text-secondary w-[180px]">
                 <li>
                   <Link
                     href="/services/web-design"
                     className="hover:text-primary"
                   >
-                    Web Design
+                    Zaad Petrol
                   </Link>
                 </li>
                 <li>
                   <Link href="/services/seo" className="hover:text-primary">
-                    SEO Services
+                    POS Line UP
                   </Link>
                 </li>
                 <li>
@@ -191,7 +225,7 @@ const Navbar = () => {
                     href="/services/marketing"
                     className="hover:text-primary"
                   >
-                    Digital Marketing
+                    Standalone Terminal
                   </Link>
                 </li>
               </ul>

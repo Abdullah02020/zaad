@@ -6,6 +6,9 @@ import "aos/dist/aos.css";
 import Navbar from "@/components/Navbar";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
+import CounterSection from "@/components/CounterSection";
+import { AnimatedTestimonialsDemo } from "@/components/AnimatedTestimonialsDemo";
+import Footer from "@/components/Footer";
 export default function Home() {
   // Initialize AOS
   useEffect(() => {
@@ -14,11 +17,14 @@ export default function Home() {
     });
   }, []);
   return (
-    <div className="">
+    <div className="bg-black">
       <Navbar />
       <HeroSection />
       <ServicesSection />
       <AboutSection />
+      <CounterSection />
+      <AnimatedTestimonialsDemo />
+      <Footer />
     </div>
   );
 }
