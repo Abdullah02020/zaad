@@ -18,13 +18,11 @@ export default function Home() {
   }, []);
   return (
     <div className="bg-black">
-      <Navbar />
       <HeroSection />
       <ServicesSection />
       <AboutSection />
       <CounterSection />
       <AnimatedTestimonialsDemo />
-      <Footer />
     </div>
   );
 }
