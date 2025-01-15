@@ -45,7 +45,7 @@ export const AnimatedTestimonials = ({
   return (
     <div className="overflow-hidden max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
       <h1
-        className="text-center text-[50px] mb-10"
+        className="text-center text-[50px] mb-10 text-white"
         data-aos="fade-down"
         data-aos-delay="300"
       >
