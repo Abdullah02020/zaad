@@ -97,8 +97,10 @@ const Footer = () => {
         <div data-aos="fade-left" data-aos-delay="400">
           <h4 className="text-xl font-bold mb-4">Newsletter</h4>
           <p className="text-gray-400 mb-4">
-            Don't miss any updates or offers! Subscribe to our mailing list.
+            Don&apos;t miss any updates or offers! Subscribe to our mailing
+            list.
           </p>
+
           <div className="flex items-center bg-white text-secondary rounded-lg overflow-hidden">
             <input
               type="email"
