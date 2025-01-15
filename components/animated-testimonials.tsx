@@ -43,8 +43,19 @@ export const AnimatedTestimonials = ({
   }, [autoplay, handleNext]);
 
   return (
-    <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div className="overflow-hidden max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
+      <h1
+        className="text-center text-[50px] mb-10"
+        data-aos="fade-down"
+        data-aos-delay="300"
+      >
+        What our clients say
+      </h1>
+      <div
+        className="relative grid grid-cols-1 md:grid-cols-2 gap-20"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>

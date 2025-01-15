@@ -30,7 +30,11 @@ const CounterSection = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white py-16">
+    <div
+      className="bg-black text-white py-16"
+      data-aos="fade-down"
+      data-aos-delay="300"
+    >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto text-center">
         {counts.map((count, index) => (
           <div key={index} className="flex flex-col items-center">
