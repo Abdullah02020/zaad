@@ -88,10 +88,7 @@ const Navbar = () => {
           >
             <ul className="p-4 space-y-2 text-secondary w-[180px]">
               <li>
-                <Link
-                  href="/services/web-design"
-                  className="hover:text-primary"
-                >
+                <Link href="/zaad-petrol" className="hover:text-primary">
                   Zaad Petrol
                 </Link>
               </li>
@@ -209,10 +206,7 @@ const Navbar = () => {
             >
               <ul className="p-4 space-y-2 text-secondary w-[180px]">
                 <li>
-                  <Link
-                    href="/services/web-design"
-                    className="hover:text-primary"
-                  >
+                  <Link href="/zaad-petrol" className="hover:text-primary">
                     Zaad Petrol
                   </Link>
                 </li>

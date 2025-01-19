@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
-const AboutHero = () => {
+const PetrolHero = () => {
   // Initialize AOS
   useEffect(() => {
     Aos.init({
@@ -34,7 +34,7 @@ const AboutHero = () => {
           data-aos="fade-down"
           data-aos-delay="350"
         >
-          About us
+          Zaad Petrol
         </h1>
         <div
           className="flex items-center justify-center space-x-4 text-lg"
@@ -45,11 +45,11 @@ const AboutHero = () => {
             Home
           </Link>
           <span className="text-gray-400">/</span>
-          <span>About us</span>
+          <span>Zaad Petrol</span>
         </div>
       </div>
     </section>
   );
 };
 
-export default AboutHero;
+export default PetrolHero;

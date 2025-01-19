@@ -1,7 +1,7 @@
 "use client";
-import AboutHero from "@/components/AboutHero";
-import AboutSection from "@/components/AboutSection";
-import MoreAboutUs from "@/components/MoreAboutUs";
+import PetrolHero from "@/components/PetrolHero";
+import ZaadPetroBenefits from "@/components/ZaadPetroBenefits";
+import ZaadPetroIntro from "@/components/ZaadPetroIntro";
 import Aos from "aos";
 import React, { useEffect } from "react";
 
@@ -14,9 +14,9 @@ const page = () => {
   }, []);
   return (
     <div>
-      <AboutHero />
-      <AboutSection />
-      <MoreAboutUs />
+      <PetrolHero />
+      <ZaadPetroIntro />
+      <ZaadPetroBenefits />
     </div>
   );
 };
